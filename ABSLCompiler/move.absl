@@ -1,0 +1,31 @@
+/*
+	When this script is called there is a code passed to the script.
+	In this example there are 4 possible codes {000, 001, 010, 011}
+	each one represents one chord of the ukelele.
+	
+	G : 000
+	C : 001
+	E : 010
+	A : 011
+*/
+
+//We define a constant for how long the button should be held
+def "HOLD_FOR" "40"
+
+//Starts the script
+do
+	//If G is played the buttong W will be held for HOLD_FOR milliseconds
+	on "000" hold 'W' "HOLD_FOR"
+	
+	//If C is played the buttong A will be held for HOLD_FOR milliseconds
+	else on "001" hold 'A' "HOLD_FOR"
+	
+	//If E is played the buttong S will be held for HOLD_FOR milliseconds
+	else on "010" hold 'S' "HOLD_FOR"
+	
+	//If A is played the buttong D will be held for HOLD_FOR milliseconds
+	else on "100" hold 'D' "HOLD_FOR"
+	
+//Finishes the script
+stop
+
